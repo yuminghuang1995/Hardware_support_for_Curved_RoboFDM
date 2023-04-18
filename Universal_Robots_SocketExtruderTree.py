@@ -605,7 +605,6 @@ class RobotPost(object):
             feedrate = 60 * add_material / time_s
             self.setSocket(-add_material, feedrate)
         else:
-            #换层，E清零,所以给初始值
             self.setSocket(2.5, 90)
         
         # Remember the last position
@@ -655,13 +654,10 @@ class RobotPost(object):
         socket_f = str('%.3f' % socket_f)
 
         if self.EXTRUDER_INDEX != self.LAST_EXTRUDER_INDEX:
-            #回抽至交汇处
             newline = 'socket_send_line("G1 E%s F%s", "socket_01")' % (-20, 60)
             self.addline(newline)
             newline = 'socket_send_line("T%s", "socket_01")' % (self.EXTRUDER_INDEX)
             self.addline(newline)
-            
-            #清理内壁残余的上一种材料
             newline = 'socket_send_line("G1 E%s F%s", "socket_01")' % (26.0, 60)
             self.addline(newline)
             newline = 'sleep(%s)' % (45.0)
