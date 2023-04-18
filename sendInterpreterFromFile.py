@@ -48,14 +48,13 @@ def delete_lines(filename, head,tail):
 
 def send_cmd_interpreter_mode_file(intrp, commandFile):
 
-    ext = os.path.splitext(commandFile)    # 将文件名路径与后缀名分开
+    ext = os.path.splitext(commandFile)   
     
-    if ext[1] == '.script':                    # 文件名：ext[0], 文件后缀：ext[1]
+    if ext[1] == '.script':                  
         new_commandFile = 'C:/Users/yumin/' + ext[0] + '.txt'  
         old_commandFile = 'C:/Users/yumin/' + commandFile 
-        os.rename(old_commandFile, new_commandFile)           # 此处需要绝对路径，直接替换后缀
+        os.rename(old_commandFile, new_commandFile)         
         commandFile = ext[0] + '.txt'
-        #删除前23行全局变量和后4行函数结束
         delete_lines(commandFile, 23, 4)
     
 
