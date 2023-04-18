@@ -235,7 +235,7 @@ MAKE_GUI_PROGRAM = True
 
 if MAKE_GUI_PROGRAM:
     joint = load_targets_GUI(mergeLayer)
-    f = open('C:/Users/yumin/Desktop/roboDK/test_file_joints5.txt','w')
+    f = open('../roboDK/test_file.txt','w')
     for jointi in joint:
         s = str(jointi).replace('[','').replace(']','')
         
