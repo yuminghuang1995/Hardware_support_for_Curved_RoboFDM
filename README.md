@@ -1,7 +1,7 @@
 ### Hardware_support_for_Curved_RoboFDM
 ## Abstract
 This project provides hardware support for [Support_Generation_for_Curved_RoboFDM](https://github.com/zhangty019/Support_Generation_for_Curved_RoboFDM).
-##Structure
+## Structure
 
 ![](Figures/UR5esetup.png)
 ## Usage
